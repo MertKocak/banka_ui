@@ -1,4 +1,5 @@
 import 'package:banka/constants.dart';
+import 'package:banka/drawer_widget.dart';
 import 'package:banka/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -27,7 +28,8 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 245, 255, 255),
+      drawer: DrawerWidget(),
+      backgroundColor: Constants.beyaz,
       body: Container(
         margin: EdgeInsets.only(top: 10),
         child: ListView(
@@ -38,23 +40,24 @@ class _HomePageState extends State<HomePage> {
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Image.asset(
-                      "assets/images/drawer.png",
-                      height: 28,
-                      color: constants.mavi,
+                    InkWell(
+                      onTap: () {
+                        debugPrint("tıklandı");
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: ((context) => DrawerWidget())));
+                      },
+                      child: Image.asset(
+                        "assets/images/drawer.png",
+                        height: 28,
+                        color: Constants.mavi,
+                      ),
                     ),
-                    /* Container(
-                      height: 40,
-                      width: 40,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(40),
-                        color: constants.mavi,
-                      ), */
                     Icon(
                       Icons.logout_rounded,
                       size: 35,
-                      color: constants.mavi,
-                      
+                      color: Constants.mavi,
                     ),
                   ]),
             ),
@@ -71,7 +74,7 @@ class _HomePageState extends State<HomePage> {
                           fontFamily: "raleM",
                           fontSize: 21,
                           fontWeight: FontWeight.w600,
-                          color: constants.siyah)),
+                          color: Constants.siyah)),
                   SizedBox(
                     height: 3,
                   ),
@@ -80,7 +83,7 @@ class _HomePageState extends State<HomePage> {
                           fontFamily: "raleB",
                           fontSize: 28,
                           fontWeight: FontWeight.w900,
-                          color: constants.siyah)),
+                          color: Constants.siyah)),
                 ],
               ),
             ),
@@ -91,7 +94,7 @@ class _HomePageState extends State<HomePage> {
                       fontFamily: "raleM",
                       fontSize: 18,
                       fontWeight: FontWeight.w600,
-                      color: constants.siyah)),
+                      color: Constants.siyah)),
             ),
             Container(
               height: 199,
@@ -109,7 +112,7 @@ class _HomePageState extends State<HomePage> {
                               left: 20,
                               top: 15,
                               child: Text(CardInfo[0],
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       fontFamily: "raleB",
                                       fontSize: 20,
                                       fontWeight: FontWeight.w700,
@@ -119,7 +122,7 @@ class _HomePageState extends State<HomePage> {
                               left: 20,
                               top: 128,
                               child: Text(CardInfo[1],
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       fontFamily: "raleB",
                                       fontSize: 18,
                                       fontWeight: FontWeight.w600,
@@ -129,7 +132,7 @@ class _HomePageState extends State<HomePage> {
                               left: 20,
                               top: 150,
                               child: Text(CardInfo[3],
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       fontFamily: "raleM",
                                       fontSize: 11,
                                       fontWeight: FontWeight.w600,
@@ -139,7 +142,7 @@ class _HomePageState extends State<HomePage> {
                               left: 30,
                               top: 80,
                               child: Text(CardInfo[2],
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       fontFamily: "raleM",
                                       fontSize: 20,
                                       fontWeight: FontWeight.w600,
@@ -159,7 +162,7 @@ class _HomePageState extends State<HomePage> {
                                 width: 70,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(50),
-                                  color: constants.kmavi,
+                                  color: Constants.kmavi,
                                 ),
                               ),
                             ),
@@ -172,11 +175,11 @@ class _HomePageState extends State<HomePage> {
                                 begin: Alignment.topRight,
                                 end: Alignment.bottomLeft,
                                 colors: [
-                                  constants.mavi,
-                                  constants.kmavi,
+                                  Constants.mavi,
+                                  Constants.kmavi,
                                 ]),
                             borderRadius: BorderRadius.circular(28),
-                            color: constants.kmavi),
+                            color: Constants.kmavi),
                       ),
                       SizedBox(
                         width: 10,
@@ -188,7 +191,7 @@ class _HomePageState extends State<HomePage> {
                               left: 20,
                               top: 15,
                               child: Text(CardInfo[0],
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       fontFamily: "raleB",
                                       fontSize: 20,
                                       fontWeight: FontWeight.w700,
@@ -198,7 +201,7 @@ class _HomePageState extends State<HomePage> {
                               left: 20,
                               top: 128,
                               child: Text(CardInfo[1],
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       fontFamily: "raleB",
                                       fontSize: 18,
                                       fontWeight: FontWeight.w600,
@@ -208,7 +211,7 @@ class _HomePageState extends State<HomePage> {
                               left: 20,
                               top: 150,
                               child: Text(CardInfo[3],
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       fontFamily: "raleM",
                                       fontSize: 11,
                                       fontWeight: FontWeight.w600,
@@ -218,7 +221,7 @@ class _HomePageState extends State<HomePage> {
                               left: 30,
                               top: 80,
                               child: Text(CardInfo[2],
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       fontFamily: "raleM",
                                       fontSize: 20,
                                       fontWeight: FontWeight.w600,
@@ -238,7 +241,7 @@ class _HomePageState extends State<HomePage> {
                                 width: 70,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(50),
-                                  color: constants.mavi,
+                                  color: Constants.mavi,
                                 ),
                               ),
                             ),
@@ -251,11 +254,11 @@ class _HomePageState extends State<HomePage> {
                                 begin: Alignment.topRight,
                                 end: Alignment.bottomLeft,
                                 colors: [
-                                  constants.kmavi,
-                                  constants.mavi,
+                                  Constants.kmavi,
+                                  Constants.mavi,
                                 ]),
                             borderRadius: BorderRadius.circular(28),
-                            color: constants.mavi),
+                            color: Constants.mavi),
                       ),
                     ],
                   );
@@ -271,7 +274,7 @@ class _HomePageState extends State<HomePage> {
                           fontFamily: "raleM",
                           fontSize: 18,
                           fontWeight: FontWeight.w600,
-                          color: constants.siyah)),
+                          color: Constants.siyah)),
                 ],
               ),
             ),
@@ -306,17 +309,17 @@ class _HomePageState extends State<HomePage> {
       width: 124,
       height: 124,
       decoration: BoxDecoration(
-        border: Border.all(color: constants.mavi, width: 3),
+        border: Border.all(color: Constants.mavi, width: 3),
         boxShadow: [
           BoxShadow(
-            color: constants.kmavi,
+            color: Constants.kmavi,
           ),
         ],
         borderRadius: BorderRadius.circular(20),
         gradient: LinearGradient(
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
-            colors: [constants.kmavi, constants.kmavi]),
+            colors: [Constants.kmavi, Constants.kmavi]),
       ),
       child: Padding(
         padding: const EdgeInsets.only(top: 14),
