@@ -1,6 +1,6 @@
 # banka
 
-A new Flutter project.
+banka uygulaması için arayüz tasarımı
 
 ## Getting Started
 
