@@ -14,8 +14,17 @@ var operations = [
   "Ödemeler",
   "Krediler",
   "Sigorta",
-  "Döviz",
+  "Döviz İşlemleri",
   "Yatırım"
+];
+
+var operationsEn = [
+  "Money Transfer",
+  "Payments",
+  "Loans",
+  "Insurance",
+  "Currency transactions",
+  "Investment"
 ];
 
 var opimage = [
@@ -27,6 +36,7 @@ var opimage = [
   "assets/images/yatirim.png"
 ];
 
+bool lng = true;
 void main() {
   runApp(const MyApp());
 }
