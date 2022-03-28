@@ -1,5 +1,5 @@
 import 'package:banka/constants.dart';
-import 'package:banka/drawer_widget.dart';
+import 'package:banka/drawer.dart';
 import 'package:banka/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -17,7 +17,9 @@ List<T> map<T>(List list, Function handler) {
   return result;
 }
 
+
 class HomePage extends StatefulWidget {
+  
   HomePage({Key? key}) : super(key: key);
 
   @override
@@ -25,9 +27,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+   final GlobalKey<ScaffoldState> _key = GlobalKey();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _key,
       drawer: DrawerWidget(),
       backgroundColor: Constants.beyaz,
       body: Container(
@@ -40,19 +44,12 @@ class _HomePageState extends State<HomePage> {
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    InkWell(
-                      onTap: () {
-                        debugPrint("tıklandı");
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: ((context) => DrawerWidget())));
+                    IconButton(
+                      onPressed: () {
+                        _key.currentState!.openDrawer();
+                        setState(() {});
                       },
-                      child: Image.asset(
-                        "assets/images/drawer.png",
-                        height: 28,
-                        color: Constants.mavi,
-                      ),
+                      icon: Icon(Icons.menu),
                     ),
                     Icon(
                       Icons.logout_rounded,

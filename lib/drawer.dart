@@ -16,6 +16,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
+        color: Constants.beyaz,
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
@@ -27,7 +28,6 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                   bottomRight: Radius.circular(15),
                 ),
               ),
-              
               accountName: Padding(
                 padding: const EdgeInsets.only(left: 8),
                 child: Text(name,
@@ -159,7 +159,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                   color: Constants.kmavi,
                   size: 34,
                 ),
-                title: Text(lng ? "English": "Türkçe",
+                title: Text(lng ? "English" : "Türkçe",
                     style: TextStyle(
                         color: Constants.kmavi,
                         fontFamily: "raleM",
@@ -168,24 +168,6 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                   lng = !lng;
                   debugPrint(lng.toString());
                   setState(() {});
-                },
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 8.0),
-              child: ListTile(
-                leading: Icon(
-                  Icons.arrow_back,
-                  color: Constants.kmavi,
-                  size: 34,
-                ),
-                title: Text(lng ? "Geri": "Back",
-                    style: TextStyle(
-                        color: Constants.kmavi,
-                        fontFamily: "raleM",
-                        fontWeight: FontWeight.w700)),
-                onTap: () {
-                  Navigator.pop(context);
                 },
               ),
             ),
