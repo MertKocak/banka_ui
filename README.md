@@ -2,15 +2,4 @@
 
 banka uygulaması için arayüz tasarımı
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Collage Maker-22-Sep-2022-02 07-PM](https://user-images.githubusercontent.com/74009802/191731324-fc33d9f0-f52b-4f3e-8a66-947ef53a0d59.jpg)
